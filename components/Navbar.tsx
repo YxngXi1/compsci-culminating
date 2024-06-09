@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='flex w-full absolute justify-between p-10'>
+    <div className='bg-white flex w-full fixed top-0 z-10 justify-between p-10'>
       <div className='w-1/12'>
         <a href='/'>
           <button>Home</button>

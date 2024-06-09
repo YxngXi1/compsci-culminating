@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Alert } from "react-bootstrap";
 
 export default function Home() {
   return (

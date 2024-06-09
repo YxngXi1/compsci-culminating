@@ -2,14 +2,15 @@
 
 import React, { useState } from 'react';
 
-const DQuiz = () => {
+interface QuizProps {
+  question: string;
+  answers: string[];
+  correctAnswer: string;
+}
+
+const Quiz: React.FC<QuizProps> = ({ question, answers, correctAnswer }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-
-  const question = 'Why is documentation important for both the individuals coding and others who view the code?'
-  const answers = ["a","b", "c", "d"];
-  const correctAnswer = "d";
-  const options = ["wrong", 'wrong', 'wrong', 'right']
 
   const handleAnswerClick = (answer: string) => {
     setSelectedAnswer(answer);
@@ -20,9 +21,8 @@ const DQuiz = () => {
     <div className='text-center'>
       <h1 className='text-lg'>{question}</h1>
       <p className='text-base'>
-        {options.map((option, index) =>
-
-          <span key={index}>{String.fromCharCode(97 +index)}.) {option} </span>
+        {answers.map((answer, index) =>
+          <span key={index}>{String.fromCharCode(97 + index)}.) {answer} </span>
         )}
       </p>
       {answers.map((answer, index) => (
@@ -41,4 +41,4 @@ const DQuiz = () => {
   );
 };
 
-export default DQuiz;
+export default Quiz;
