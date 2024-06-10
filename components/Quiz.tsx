@@ -18,9 +18,9 @@ const Quiz: React.FC<QuizProps> = ({ question, answers, correctAnswer }) => {
   };
 
   return (
-    <div className='text-center'>
-      <h1 className='text-lg'>{question}</h1>
-      <p className='text-base'>
+    <div className='text-center my-12 mx-12'>
+      <h1 className='text-5xl bold'>{question}</h1>
+      <p className='text-xl'>
         {answers.map((answer, index) =>
           <span key={index}>{String.fromCharCode(97 + index)}.) {answer} </span>
         )}
@@ -32,9 +32,10 @@ const Quiz: React.FC<QuizProps> = ({ question, answers, correctAnswer }) => {
           style={{
             backgroundColor: selectedAnswer === answer ? (isCorrect ? 'green' : 'red') : '#fff',
             color: selectedAnswer === answer ? '#fff' : '#000',
+            marginRight: '20px',
           }}
         >
-          {answer}
+          {String.fromCharCode(97 + index)}
         </button>
       ))}
     </div>
