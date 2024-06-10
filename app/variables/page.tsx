@@ -11,8 +11,8 @@ const page = () => {
         <h1 className='mb-4 '>Variables</h1>
         <Image 
           src='/images/variables.png'
-          width={1000}
-          height={500}
+          width={500}
+          height={300}
           alt='variables'
         / >
         <div className=' flex  justify-center items-center text-center gap-8 mx-8 my-12'>

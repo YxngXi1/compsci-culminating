@@ -11,8 +11,8 @@ const page = () => {
         <h1 className='mb-4 '>If Statements</h1>
         <Image 
           src='/images/if-statements.png'
-          width={1000}
-          height={500}
+          width={500}
+          height={300}
           alt='if-statements'
         / >
         <div className=' flex  justify-center items-center text-center gap-8 mx-8 my-12'>
