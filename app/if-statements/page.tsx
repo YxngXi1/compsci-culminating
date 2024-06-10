@@ -7,30 +7,61 @@ import Quiz from '@/components/Quiz'
 const page = () => {
   return (
     <section>
-      <div className='flex  flex-col h-screen items-center justify-center text-center'>
-        <h1 className='mb-4 '>Function</h1>
+      <div className='flex my-20 flex-col h-full items-center justify-center text-center'>
+        <h1 className='mb-4 '>If Statements</h1>
         <Image 
-          src='/images/functions.png'
+          src='/images/if-statements.png'
           width={1000}
           height={500}
-          alt='documentation'
+          alt='if-statements'
         / >
         <div className=' flex  justify-center items-center text-center gap-8 mx-8 my-12'>
-            <h1 className=' w-2/12 '>What is a function?</h1>
-            <p className=' w-10/12  flex justify-center items-center h-full text-xs'>
-              Variables are ways to temporarily store information and can be manipulated using a variety of methods. Naming a variable, as stated previously in documentation is extremely important to be able to tell what it is doing, and to tell what the value it holds is. There are 2 naming conventions for variables as stated previously including camelCase and pot_hole_case. Variables have many different types such as integers (whole number), floats (decimal number), strings (text), boolean values (a true or false, 0 or 1), etc. A constant is a variable cannot be changed and no matter who or what you input when running the program. In the case shown above, resultList is an instance of a constant. A fun thing you can do with variables is to be able to isolate certain parts of it, in particular with strings. For example, you can use variableName.islower() to check if the entire string is lowercase. There are many others like that, but in python it also includes count() and len(), where len returns the amount of characters that are in a string and count can be used to count how many times a certain character, word or phrase is used in a string, or any variable such as a list. In the above code, you can see this being used to be able to isolate each word in the fileContent apart. In python the interepreator will figure out what kind of vrialbe you chose is, and so you don’t need to assign it yourself. To be able to print a variable you need to use a  + str(variable) to be able to print it out.
-               Otherwise you can create an f string by doing print(f”and then adding a variable like so: {'{variable}'}”). 
-               To adjust these variables you can use math, the most common of them being +, -, *, /, //, %, and **. // is used when you do math and it will ignore all values afte the decimal place. % will find the remainder of a division, and ** with be the same at to the power of. NOTE YOU CANNOT DO MATH WITH STRINGS. You can also convert between data types through function such as int(), float(), and str(). They will each convert whatever variable you place inside to be integer, float, and string respectively. The most important and often utilization of a variable is when you put a [variable = input(“question goes here”)]. This will store the user input in the variable, so that you are able to access it later. The variable will always originally be a string, but can be converted to an integer if need be through the functions given above. Variables are also able to store lists and dictionaries. The basics of what a list is multiple values in 1 variable, and the y are usually separated in comments and look like [a = [value1, value2, value3, value4]. On the other hand, dictionaries will have a key and value that goes along with the key and looks like this: [Dictionary = [“key” : “value”, “key2” : “value2”, etc.]].  The code outlined above we created a list of all of the words that are 5 letters long using the word.txt, and importing it into a variable. We also have an example of a string and integer where we have attemptsLeft being 6, and userGuess being a string!
-            </p>
+        <p className='w-full flex justify-center items-center h-full text-base'>
+          An if statement is basically changing the program based off of whether something is true or false. They always include a condition, and it will always return a boolean value which is either "True" or "False". INDENTATION IS REQUIRED FOR THE PROGRAM TO UNDERSTAND THAT YOUR CODE IS WITHIN THE IF STATEMENT. There are multiple conditions you can use, but some of the most common ones are  == is it equal, &gt;= is it greater than or equal to, &gt; is it greater than, &lt;= is it less than or equal to, &lt; is it less than, != is it NOT equal to. However, if the statement is false, then you will need an else statement right under to be able to indicate what will happen if it is false. You can also put chains of if statements together, using the elif. It will go from top to bottom, and if one if statement doesn’t work, then it will move down to the next one, and so on until reaching the else statement. Furthermore, you can also chain together different conditions like "and" and "or". 'And' makes sure both conditions are true, and 'or' checks if either one of them are true.  Essentially for 'and', if both are true, it will go into that branch, if only one is true and there is an 'or' statement, it will also pass through to that branch. Furthermore, you can also group chains together by using brackets around the statements. See below for examples of the code! Another important concept in if statements is a nested if statement, essentially it is an if statement within an if statement. Nested if statements are important if you would like to branch off even more from the original branch. For example, in the scenario above, if one of the characters is an underscore it will then go on to another if statement, to be able to identify which ones to identify as correct, incorrect, and just being in the wrong place. Nested if statements make code more compact, easier to read, and are able to communicate ideas more effectively. In the program shown above the first command is seeing if it is true that there is not an underscore, if not then it will add a blank space. As you can see, the != not equal to works in a way to check for an underscore being there or not, if there isn’t one, it means that there is a letter there, and so it will run the if statement that is NESTED within.
+        </p>
         </div>
       </div>
       <div>
         <Quiz 
-          question=""
-          answers={["", ""]}
-          correctAnswer=""
+          question="What is an if statements?"
+          answers={["It runs a function, usually repeated code", "If it is true, it will change the program and lead it down a different path, otherwise if it’s false it will go down a different path again.", "it will print a value", "it will iterate through a list multiple times"]}
+          correctAnswer="If it is true, it will change the program and lead it down a different path, otherwise if it’s false it will go down a different path again."
         />
-        
+        <Quiz 
+          question="Which of the following is not a condition that you can use for if statements?"
+          answers={["==", "=", "!=", ">=", ">", "<", "<="]}
+          correctAnswer="="
+        />
+        <Quiz 
+          question="What is an elif?"
+          answers={["A nested branch", "It is essentially an if statement that will be run through after the if statement is false", "the final possibility", "a debugging part"]}
+          correctAnswer="It is essentially an if statement that will be run through after the if statement is false"
+        />
+        <Quiz 
+          question="What does a chain of if, elif, and else statements look like in the order they will be run through?"
+          answers={["if/elif/elif/elif/elif/elif/else", "elif/if/elif/elif/elif/elif/else", "else/if/elif/elif/elif/elif/elif/else", "if/elif/elif/elif/elif/elif"]}
+          correctAnswer="if/elif/elif/elif/elif/elif/else"
+        />
+        <Quiz 
+          question="What is not a condition?"
+          answers={["and", "or", "other"]}
+          correctAnswer="other"
+        />
+        <Quiz 
+          question="Which one will check if both conditions are true?"
+          answers={["and", "or"]}
+          correctAnswer="and"
+        />
+        <Quiz 
+          question="Which one will check if only on condition is correct?"
+          answers={["and", "or"]}
+          correctAnswer="or"
+        />
+        <Quiz 
+          question="How do you group chains together?"
+          answers={["just use order of operations", "using brackets", "add them together using +"]}
+          correctAnswer="How do you group chains together?"
+        />
       </div>
     </section>
   )
