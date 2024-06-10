@@ -60,7 +60,7 @@ const page = () => {
         <Quiz 
           question="How do you group chains together?"
           answers={["just use order of operations", "using brackets", "add them together using +"]}
-          correctAnswer="How do you group chains together?"
+          correctAnswer="using brackets"
         />
       </div>
     </section>

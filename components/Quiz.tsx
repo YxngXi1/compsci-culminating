@@ -20,11 +20,13 @@ const Quiz: React.FC<QuizProps> = ({ question, answers, correctAnswer }) => {
   return (
     <div className='text-center my-12 mx-12'>
       <h1 className='text-5xl bold'>{question}</h1>
-      <p className='text-xl'>
-        {answers.map((answer, index) =>
-          <span key={index}>{String.fromCharCode(97 + index)}.) {answer} </span>
-        )}
-      </p>
+      <div>
+        {answers.map((answer, index) => (
+          <p key={index} className='text-xl'>
+            <span>{String.fromCharCode(97 + index)}.) {answer} </span>
+          </p>
+        ))}
+      </div>
       {answers.map((answer, index) => (
         <button
           key={index}
