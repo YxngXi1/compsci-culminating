@@ -33,7 +33,7 @@ const Navbar = () => {
           <button>Documentation</button>
         </a>
         <a href='/functions'>
-          <button>function</button>
+          <button>Function</button>
         </a>
         <a href='/if-statements'>
           <button>If Statements</button>
